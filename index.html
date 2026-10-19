@@ -118,7 +118,7 @@
   <!-- Audio Toggle Button Floating -->
   <button id="audioToggle" onclick="toggleAudio()" class="fixed bottom-6 right-6 z-40 bg-white/90 hover:bg-amber-50 text-gold-600 p-4 rounded-full shadow-2xl transition duration-300 flex items-center justify-center border-2 border-gold-400 group">
     <i id="audioIcon" class="fas fa-music text-xl"></i>
-    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out text-xs font-semibold ml-0 group-hover:ml-2">Ambient Nasheed</span>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out text-xs font-semibold ml-0 group-hover:ml-2">Nikkah Melodic Tone</span>
   </button>
 
   <!-- Navigation Bar -->
@@ -409,10 +409,43 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 3. Audio Synthesizer (Ambient Nasheed Tone)
+    // 3. Eastern/Nikkah Melodic Audio Synthesizer
     let audioCtx = null;
     let isPlaying = false;
-    let oscillator = null;
+    let melodyTimer = null;
+
+    // Soft Eastern Minor Scale Notes (Frequencies in Hz)
+    const nikkahNotes = [220.00, 246.94, 261.63, 293.66, 329.63, 349.23, 392.00, 440.00];
+
+    function playNextMelodicNote(index) {
+      if (!isPlaying || !audioCtx) return;
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      const noteFreq = nikkahNotes[index % nikkahNotes.length];
+      
+      osc.type = 'sine'; // Soft, clear flute-like tone
+      osc.frequency.setValueAtTime(noteFreq, audioCtx.currentTime);
+
+      // Envelope: gentle fade in and smooth fade out
+      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.06, audioCtx.currentTime + 0.15);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.75);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(audioCtx.currentTime);
+      osc.stop(audioCtx.currentTime + 0.8);
+
+      // Play next note every 750ms
+      melodyTimer = setTimeout(() => {
+        // Melodic pattern loop
+        const nextIndex = (index + 1) % nikkahNotes.length;
+        playNextMelodicNote(nextIndex);
+      }, 750);
+    }
 
     function toggleAudio() {
       const icon = document.getElementById('audioIcon');
@@ -421,25 +454,16 @@
         if (!audioCtx) {
           audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         }
-        
-        oscillator = audioCtx.createOscillator();
-        const gainNode = audioCtx.createGain();
-
-        oscillator.type = 'sine';
-        oscillator.frequency.setValueAtTime(220, audioCtx.currentTime); // A3 harmonic note
-        gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime); // Soft volume
-
-        oscillator.connect(gainNode);
-        gainNode.connect(audioCtx.destination);
-        oscillator.start();
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
 
         isPlaying = true;
         icon.className = "fas fa-volume-up text-xl";
+        playNextMelodicNote(0);
       } else {
-        if (oscillator) {
-          oscillator.stop();
-        }
         isPlaying = false;
+        if (melodyTimer) clearTimeout(melodyTimer);
         icon.className = "fas fa-music text-xl";
       }
     }
