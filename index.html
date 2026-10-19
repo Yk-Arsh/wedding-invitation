@@ -127,10 +127,10 @@
       <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wider uppercase text-amber-200/80">
         <a href="#verse" class="hover:text-amber-400 transition">Ayah</a>
         <a href="#events" class="hover:text-amber-400 transition">Nikkah Event</a>
-        <a href="#rsvp" class="hover:text-amber-400 transition">RSVP &amp; Wishes</a>
+        <a href="#hosts" class="hover:text-amber-400 transition">Hosts</a>
       </div>
-      <a href="#rsvp" class="px-5 py-2 text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-amber-500 to-amber-700 text-emerald-950 rounded-full hover:brightness-110 transition shadow-lg">
-        RSVP Now
+      <a href="#hosts" class="px-5 py-2 text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-amber-500 to-amber-700 text-emerald-950 rounded-full hover:brightness-110 transition shadow-lg">
+        Our Family
       </a>
     </div>
   </nav>
@@ -265,43 +265,26 @@
     </div>
   </section>
 
-  <!-- RSVP Section Only -->
-  <section id="rsvp" class="py-24 px-6 max-w-2xl mx-auto">
-    <div class="bg-emerald-900/40 border border-amber-500/30 rounded-2xl p-8 md:p-10 shadow-2xl gold-glow">
-      <div class="text-center mb-8 space-y-2">
-        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Response Requested</p>
-        <h3 class="font-serif text-3xl md:text-4xl font-bold text-amber-200">RSVP &amp; Send Wishes</h3>
-        <p class="text-xs text-gray-300">Please confirm your presence and leave a warm Dua by November 1, 2026.</p>
+  <!-- Hosts & Family Members Section -->
+  <section id="hosts" class="py-24 px-6 max-w-3xl mx-auto text-center">
+    <div class="bg-emerald-900/40 border border-amber-500/30 rounded-2xl p-8 md:p-12 shadow-2xl gold-glow space-y-8">
+      <div class="space-y-2">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">With Best Compliments From</p>
+        <h3 class="font-serif text-3xl md:text-4xl font-bold text-amber-200">Cordially Invited By</h3>
+        <div class="w-12 h-0.5 bg-amber-500/40 mx-auto mt-2"></div>
       </div>
 
-      <form id="rsvpForm" onsubmit="handleRSVP(event)" class="space-y-5">
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Your Full Name</label>
-          <input type="text" id="guestName" required placeholder="e.g. Tariq Mansoor" class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400">
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-emerald-100/90 font-serif text-base">
+        <div class="p-3 bg-emerald-950/50 rounded-xl border border-amber-500/20">1. Abdul Sattar</div>
+        <div class="p-3 bg-emerald-950/50 rounded-xl border border-amber-500/20">2. Abdul Jabbar</div>
+        <div class="p-3 bg-emerald-950/50 rounded-xl border border-amber-500/20">3. Israr Ahmed</div>
+        <div class="p-3 bg-emerald-950/50 rounded-xl border border-amber-500/20">4. Gulfam Alvi</div>
+        <div class="p-3 bg-emerald-950/50 rounded-xl border border-amber-500/20">5. Late Abdul Gaffar</div>
+        <div class="p-3 bg-emerald-950/50 rounded-xl border border-amber-500/20">6. Furkan</div>
+        <div class="p-3 bg-emerald-950/50 rounded-xl border border-amber-500/20 sm:col-span-2">7. Asif</div>
+      </div>
 
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Attendance</label>
-          <select id="attendance" class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400">
-            <option value="attending">Joyfully Attending Nikkah</option>
-            <option value="declined">Regretfully Decline</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Number of Guests</label>
-          <input type="number" id="guestCount" min="1" max="10" value="1" class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400">
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Send Your Dua / Warm Wishes</label>
-          <textarea id="guestDua" rows="4" placeholder="Barakallahu lakuma wa baraka 'alaykuma..." class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400"></textarea>
-        </div>
-
-        <button type="submit" class="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-400 hover:to-amber-600 text-emerald-950 font-bold uppercase tracking-widest text-xs rounded-lg transition shadow-lg cursor-pointer">
-          Submit Confirmation &amp; Wishes
-        </button>
-      </form>
+      <p class="text-xs text-amber-300/80 italic pt-2">Looking forward to welcoming you and receiving your precious duas!</p>
     </div>
   </section>
 
@@ -354,15 +337,7 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 3. Interactive RSVP Handler
-    function handleRSVP(event) {
-      event.preventDefault();
-      const name = document.getElementById('guestName').value;
-      alert(`JazakAllah Khair ${name}! Your RSVP response and wishes have been submitted.`);
-      document.getElementById('rsvpForm').reset();
-    }
-
-    // 4. Audio Synthesizer (Ambient Nasheed Tone)
+    // 3. Audio Synthesizer (Ambient Nasheed Tone)
     let audioCtx = null;
     let isPlaying = false;
     let oscillator = null;
