@@ -83,7 +83,7 @@
 
   <!-- Elegant Opening Animation Overlay -->
   <div id="openingOverlay" class="fixed inset-0 z-50 bg-emerald-950 flex flex-col items-center justify-center text-center p-6 border-8 border-amber-500/30">
-    <div class="space-y-6 max-w-md animate-fade-in">
+    <div class="space-y-6 max-w-md">
       <div class="w-20 h-20 mx-auto rounded-full bg-amber-500/10 border-2 border-amber-400 flex items-center justify-center text-amber-300 text-3xl shadow-xl gold-glow">
         <i class="fas fa-envelope-open-text"></i>
       </div>
@@ -93,7 +93,8 @@
       <div class="space-y-2">
         <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Wedding Invitation</p>
         <h1 class="font-serif text-4xl font-bold gold-gradient-text">Alisha &amp; Zubair</h1>
-        <p class="text-xs text-emerald-200/70 uppercase tracking-widest">Wednesday, 18th November 2026</p>
+        <p class="text-xs text-amber-200/80 italic font-serif">Daughter of Ashlam Alvi • Granddaughter of Israr Ahmed</p>
+        <p class="text-xs text-emerald-200/70 uppercase tracking-widest pt-2">Wednesday, 18th November 2026</p>
       </div>
 
       <button onclick="openInvitation()" class="mt-6 px-8 py-3.5 bg-gradient-to-r from-amber-500 to-amber-700 text-emerald-950 font-bold text-xs uppercase tracking-widest rounded-full hover:brightness-110 transition shadow-2xl gold-glow cursor-pointer">
@@ -115,8 +116,7 @@
       <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wider uppercase text-amber-200/80">
         <a href="#verse" class="hover:text-amber-400 transition">Ayah</a>
         <a href="#events" class="hover:text-amber-400 transition">Nikkah Event</a>
-        <a href="#timeline" class="hover:text-amber-400 transition">Our Story</a>
-        <a href="#rsvp" class="hover:text-amber-400 transition">RSVP &amp; Duas</a>
+        <a href="#rsvp" class="hover:text-amber-400 transition">RSVP &amp; Wishes</a>
       </div>
       <a href="#rsvp" class="px-5 py-2 text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-amber-500 to-amber-700 text-emerald-950 rounded-full hover:brightness-110 transition shadow-lg">
         RSVP Now
@@ -143,6 +143,9 @@
         <h1 class="font-serif text-5xl md:text-7xl font-bold tracking-wide gold-gradient-text my-4">
           Alisha &amp; Zubair
         </h1>
+        <p class="text-sm md:text-base text-amber-200/90 font-serif italic mb-3">
+          Daughter of Ashlam Alvi • Granddaughter of Israr Ahmed
+        </p>
         <p class="text-base md:text-xl text-emerald-100/80 font-light italic">
           Invite you to celebrate their union under the blessings of Allah (SWT)
         </p>
@@ -237,105 +240,43 @@
     </div>
   </section>
 
-  <!-- Our Journey Timeline -->
-  <section id="timeline" class="py-24 bg-emerald-900/20 border-y border-amber-500/10">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center space-y-3 mb-16">
-        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Written in the Stars</p>
-        <h2 class="font-serif text-4xl md:text-5xl font-bold gold-gradient-text">Our Journey</h2>
+  <!-- RSVP Section Only -->
+  <section id="rsvp" class="py-24 px-6 max-w-2xl mx-auto">
+    <div class="bg-emerald-900/40 border border-amber-500/30 rounded-2xl p-8 md:p-10 shadow-2xl gold-glow">
+      <div class="text-center mb-8 space-y-2">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Response Requested</p>
+        <h3 class="font-serif text-3xl md:text-4xl font-bold text-amber-200">RSVP &amp; Send Wishes</h3>
+        <p class="text-xs text-gray-300">Please confirm your presence and leave a warm Dua by November 1, 2026.</p>
       </div>
 
-      <div class="relative border-l-2 border-amber-500/30 ml-4 md:ml-32 space-y-12">
-        
-        <!-- Timeline Item 1 -->
-        <div class="relative pl-8 md:pl-12">
-          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-emerald-950"></div>
-          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">October 2025</span>
-          <h3 class="text-xl font-serif font-bold text-amber-200">First Introduction</h3>
-          <p class="text-sm text-gray-300 mt-2 leading-relaxed">Arranged with the blessings of both families, our paths crossed for the very first time over afternoon tea.</p>
-        </div>
-
-        <!-- Timeline Item 2 -->
-        <div class="relative pl-8 md:pl-12">
-          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-emerald-950"></div>
-          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">January 2026</span>
-          <h3 class="text-xl font-serif font-bold text-amber-200">The Engagement</h3>
-          <p class="text-sm text-gray-300 mt-2 leading-relaxed">Surrounded by close relatives, we officially announced our commitment and exchanged rings in an intimate ceremony.</p>
-        </div>
-
-        <!-- Timeline Item 3 -->
-        <div class="relative pl-8 md:pl-12">
-          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-emerald-950"></div>
-          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">November 2026</span>
-          <h3 class="text-xl font-serif font-bold text-amber-200">The Nikkah Ceremony</h3>
-          <p class="text-sm text-gray-300 mt-2 leading-relaxed">Completing half our Deen together and embarking on a lifelong journey of love, faith, and companionship.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- RSVP & Guestbook Section -->
-  <section id="rsvp" class="py-24 px-6 max-w-5xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-12">
-      
-      <!-- RSVP Form -->
-      <div class="bg-emerald-900/40 border border-amber-500/30 rounded-2xl p-8 shadow-2xl">
-        <h3 class="font-serif text-3xl font-bold text-amber-200 mb-2">RSVP Today</h3>
-        <p class="text-xs text-gray-300 mb-6">Please confirm your presence by November 1, 2026.</p>
-
-        <form id="rsvpForm" onsubmit="handleRSVP(event)" class="space-y-4">
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Your Full Name</label>
-            <input type="text" id="guestName" required placeholder="e.g. Tariq Mansoor" class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400">
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Attendance</label>
-            <select id="attendance" class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400">
-              <option value="attending">Joyfully Attending Nikkah</option>
-              <option value="declined">Regretfully Decline</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Number of Guests</label>
-            <input type="number" id="guestCount" min="1" max="10" value="1" class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400">
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Send your Dua / Warm Wishes</label>
-            <textarea id="guestDua" rows="3" placeholder="Barakallahu lakuma..." class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400"></textarea>
-          </div>
-
-          <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-400 hover:to-amber-600 text-emerald-950 font-bold uppercase tracking-widest text-xs rounded-lg transition shadow-lg">
-            Submit Confirmation
-          </button>
-        </form>
-      </div>
-
-      <!-- Live Duas Feed -->
-      <div class="space-y-6">
+      <form id="rsvpForm" onsubmit="handleRSVP(event)" class="space-y-5">
         <div>
-          <h3 class="font-serif text-3xl font-bold text-amber-200 mb-2">Guest Duas &amp; Wishes</h3>
-          <p class="text-xs text-gray-300">Heartfelt prayers from friends and family.</p>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Your Full Name</label>
+          <input type="text" id="guestName" required placeholder="e.g. Tariq Mansoor" class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400">
         </div>
 
-        <div id="duaFeed" class="space-y-4 max-h-[450px] overflow-y-auto pr-2">
-          
-          <div class="p-4 rounded-xl bg-emerald-900/30 border border-amber-500/20">
-            <p class="text-sm italic text-gray-200">"Barakallahu lakuma wa baraka 'alaykuma wa jama'a baynakuma fii khayr! May Allah bless your union endlessly."</p>
-            <span class="block text-xs font-bold text-amber-400 mt-2">— Uncle Khalid &amp; Family</span>
-          </div>
-
-          <div class="p-4 rounded-xl bg-emerald-900/30 border border-amber-500/20">
-            <p class="text-sm italic text-gray-200">"So happy for both of you! Wishing you a lifetime filled with peace, love, and laughter."</p>
-            <span class="block text-xs font-bold text-amber-400 mt-2">— Ayesha &amp; Bilal</span>
-          </div>
-
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Attendance</label>
+          <select id="attendance" class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400">
+            <option value="attending">Joyfully Attending Nikkah</option>
+            <option value="declined">Regretfully Decline</option>
+          </select>
         </div>
-      </div>
 
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Number of Guests</label>
+          <input type="number" id="guestCount" min="1" max="10" value="1" class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">Send Your Dua / Warm Wishes</label>
+          <textarea id="guestDua" rows="4" placeholder="Barakallahu lakuma wa baraka 'alaykuma..." class="w-full bg-emerald-950 border border-amber-500/30 rounded-lg px-4 py-3 text-sm text-gray-100 focus:outline-none focus:border-amber-400"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-400 hover:to-amber-600 text-emerald-950 font-bold uppercase tracking-widest text-xs rounded-lg transition shadow-lg cursor-pointer">
+          Submit Confirmation &amp; Wishes
+        </button>
+      </form>
     </div>
   </section>
 
@@ -358,7 +299,6 @@
         overlay.style.display = 'none';
       }, 1000);
       
-      // Auto-start ambient audio on click if desired
       toggleAudio();
     }
 
@@ -393,20 +333,7 @@
     function handleRSVP(event) {
       event.preventDefault();
       const name = document.getElementById('guestName').value;
-      const dua = document.getElementById('guestDua').value;
-
-      if (dua.trim() !== "") {
-        const duaFeed = document.getElementById('duaFeed');
-        const newDua = document.createElement('div');
-        newDua.className = "p-4 rounded-xl bg-emerald-900/40 border border-amber-500/40 animate-pulse";
-        newDua.innerHTML = `
-          <p class="text-sm italic text-gray-200">"${dua}"</p>
-          <span class="block text-xs font-bold text-amber-400 mt-2">— ${name}</span>
-        `;
-        duaFeed.prepend(newDua);
-      }
-
-      alert(`JazakAllah Khair ${name}! Your RSVP response has been submitted.`);
+      alert(`JazakAllah Khair ${name}! Your RSVP response and wishes have been submitted.`);
       document.getElementById('rsvpForm').reset();
     }
 
